@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayurdhara</title>
+	
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+	<style>
+	
+	    :root {
+		        --primary-color : #374A36;
+				--secondary-color : #e8e8e8;
+				--text-dark : #0f172a;
+				--text-light : #94a3b8;
+				--white : #ffffff;
+		}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Lora', 'Poppins', sans-serif;
+        }
+
+        /* Header Styles */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 10px 50px;
+            background: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+		
+		.logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 24px;
+            font-weight: 700;
+            color: #374A36;
+        }
+
+        .logo-img {
+            height: 50px;
+            width: auto;
+        }
+
+
+        nav a {
+            margin-left: 30px;
+            text-decoration: none;
+            color: black;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #374A36;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 100px 50px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .home {
+            margin-top: 60px;
+            background: #374A36;
+            color: #fff;
+        }
+
+        .home .content {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-slider {
+            flex: 1;
+            position: relative;
+            max-width: 600px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .slider-container {
+            position: relative;
+            height: 400px;
+        }
+
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        .slide::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.1);
+        }
+        .about { background: #efd2bb; }
+		
+
+    /* About Section Styles */
+.about {
+    background: #efd2bb;
+    padding: 100px 50px;
+}
+
+.about-container {
+    display: grid;
+    grid-template-columns: 25% 75%;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Image Column */
+.modern-frame {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 40px 40px 80px rgba(42,125,46,0.08);
+}
+
+.profile-image {
+    width: 100%;
+    height: 700px;
+    object-fit: cover;
+    object-position: center top;
+}
+
+.frame-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(255,255,255,0) 60%, rgba(42,125,46,0.1) 100%);
+}
+
+.experience-badge {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255,255,255,0.95);
+    padding: 15px 30px;
+    border-radius: 30px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    text-align: center;
+    font-weight: 600;
+    color: #374A36;
+}
+
+/* Content Column */
+.content-wrapper {
+    padding-right: 50px;
+}
+
+.section-pre-title {
+    color: #374A36;
+    letter-spacing: 3px;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.section-main-title {
+    font-size: 3rem;
+    color: #374A36;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.title-underline {
+    width: 100px;
+    height: 3px;
+    background: #374A36;
+    margin: 25px 0;
+}
+
+.highlight-text {
+    background: #e8f5e9;
+    padding: 20px;
+    border-radius: 10px;
+    font-weight: 500;
+    margin: 30px 0;
+}
+
+.specialization-list {
+    list-style: none;
+    padding: 0;
+    margin: 30px 0;
+}
+
+.specialization-list li {
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 1.05rem;
+}
+
+.medicine-creation {
+    margin: 50px 0;
+}
+
+.process-title {
+    color: #374A36;
+    font-size: 2rem;
+    margin-bottom: 25px;
+}
+
+.creation-steps {
+    list-style: none;
+    padding: 0;
+    counter-reset: step-counter;
+}
+
+.creation-steps li {
+    margin-bottom: 25px;
+    padding-left: 45px;
+    position: relative;
+    line-height: 1.6;
+}
+
+.creation-steps li::before {
+    content: counter(step-counter);
+    counter-increment: step-counter;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #374A36;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+    font-weight: bold;
+}
+
+.ayurveda-quote {
+    border-left: 4px solid #374A36;
+    padding: 30px 40px;
+    margin: 40px 0;
+    background: #f8faf8;
+    font-style: italic;
+    font-size: 1.1rem;
+    border-radius: 0 10px 10px 0;
+}
+
+@media (max-width: 1200px) {
+    .about-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .modern-frame {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    .content-wrapper {
+        padding-right: 0;
+    }
+}
+
+        .services { background: white; }
+		
+
+.services {
+    padding: 80px 20px;
+    background: #374A36;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 50px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.service-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid rgba(42,125,46,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.card-icon {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    color: #374A36;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover .card-icon {
+    transform: scale(1.1);
+}
+
+.service-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+    line-height: 1.3;
+}
+
+.service-card h3 span {
+    display: block;
+    font-size: 0.95rem;
+    color: #374A36;
+    margin-top: 8px;
+    font-weight: 400;
+}
+
+.service-card p {
+    color: #374A36;
+    line-height: 1.6;
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+@media (max-width: 1200px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    .service-card {
+        padding: 25px;
+        min-height: auto;
+    }
+}
+	
+
+
+.gallery {
+    padding: 80px 20px;
+    background: #efd2bb;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.gallery .section-title {
+    text-align: center;
+    font-size: 2.8rem;
+    color: #374A36;
+    margin-bottom: 50px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: 300px;
+    grid-gap: 15px;
+    grid-auto-flow: dense;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.gallery-item:hover {
+    transform: scale(1.02);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.6);
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .overlay {
+    opacity: 1;
+}
+
+.overlay h3 {
+    color: #fff;
+    font-size: 1.5rem;
+    text-align: center;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .overlay h3 {
+    transform: translateY(0);
+}
+
+/* Lightbox Styles */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.95);
+    overflow-y: auto;
+}
+
+.lightbox-content {
+    margin: 2% auto;
+    display: block;
+    max-width: 90%;
+    max-height: 90vh;
+    border-radius: 8px;
+}
+
+.close {
+    position: fixed;
+    top: 25px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10000;
+    transition: opacity 0.3s;
+}
+
+.close:hover {
+    opacity: 0.8;
+}
+
+.prev, .next {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 40px;
+    padding: 15px;
+    cursor: pointer;
+    background: rgba(0,0,0,0.3);
+    border-radius: 3px;
+    z-index: 10000;
+}
+
+.prev:hover, .next:hover {
+    background: rgba(0,0,0,0.5);
+}
+
+.next {
+    right: 35px;
+}
+
+.prev {
+    left: 35px;
+}
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .lightbox-content {
+        width: 95%;
+    }
+}
+
+
+
+        h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #2a7d2e;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+
+		.testimonials {background: var(--secondary-color);}
+
+.testimonials .container{
+max-width: 1200px;
+margin: auto;
+padding: 2rem 1rem;
+text-align: center;
+}
+
+.testimonials .container .section-title {
+    text-align: center;
+    font-size: 2.8rem;
+    color: var(--primary-color);
+    margin-bottom: 50px;
+}
+
+.section-grid {
+display:grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 2rem;
+}
+
+.section-card {
+position: relative;
+isolation: isolate;
+overflow: hidden;
+padding: 5rem 2rem 2rem;
+background-color: var(--white);
+border-radius: 5px;
+box-shadow: 5px 5px 10px rgba(0,0,0,0.1);
+transition: 0.3s;
+}
+
+.section-card::before {
+position : absolute;
+content : "";
+top : 0;
+left : 0;
+transform : translate(-50%, -50%);
+width: 75%;
+aspect-ratio: 1;
+border-radius: 100%;
+background-color: var(--primary-color);
+z-index: -1;
+transition: 0.5s;
+}
+
+.section-card span {
+position: absolute;
+top: 0;
+left:0;
+padding: 1rem;
+font-size: 3rem;
+color: var(--white);
+}
+
+.section-card h4 {
+margin-top: 4rem;
+margin-bottom: 1rem;
+font-size: 1.5rem;
+font-weight: 600;
+color: var(--primary-color);
+transition: 0.3s;
+}
+
+.section-card p {
+margin-bottom: 2rem;
+color: var(--text-light);
+transition: 0.3s;
+}
+
+.section-card img {
+margin-bottom: 1rem;
+max-width: 100px;
+border-radius: 100%;
+border: 2px solid var(--primary-color);
+transition: 0.3s;
+}
+
+.section-card h5 {
+font-size: 1.25rem;
+font-weight: 600;
+color: var(--primary-color);
+transition: 0.3s;
+}
+
+.section-card h6 {
+font-size: 1rem;
+font-weight: 400;
+color: var (--text-light);
+transition: 0.3s;
+}
+
+.section-card:hover::before {
+width:400%;
+}
+
+.section-card:hover :is(h4, h5) {
+color: var(--white);
+}
+
+.section-card:hover :is(p, h6) {
+color: var(--secondary-color);
+}
+
+.section-card:hover img {
+border-color: var(--white);
+}
+
+        .contact { 
+		    padding: 80px 20px;
+    background: #374A36; 
+	color: var(--white);}
+
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button {
+            background: #fff;
+            color: #374A36;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+		
+		.contact .content {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+		
+		.contact-text {
+            flex: 1;
+        }
+
+        .contact-form {
+            flex: 1;
+            position: relative;
+            max-width: 600px;
+        }
+		
+		.contact-text span {
+		font-size: 2rem;
+font-weight: 400;
+color: var (--white);
+		}
+		.contact-text h5 {
+		font-size: 1.5rem;
+font-weight: 300;
+color: var (--white);
+		}
+		.contact-text p {
+				font-size: 1rem;
+font-weight: 200;
+color: var (--white);
+		}
+
+		
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                padding: 20px;
+            }
+			.logo {
+                font-size: 20px;
+                gap: 10px;
+            }
+            .logo-img {
+                height: 30px;
+            }
+
+            nav a {
+                margin-left: 20px;
+            }
+
+            section {
+                padding: 80px 20px;
+            }
+
+            .home .content {
+                flex-direction: column;
+            }
+            
+            .hero-slider {
+                width: 100%;
+                height: 300px;
+            }
+
+            .slider-container {
+                height: 300px;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+	        <div class="logo">
+            <img src="./img/logo.png" alt="Clinic Logo" class="logo-img">
+            Ayurdhara
+        </div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+			<a href="#gallery">Gallery</a>
+			<a href="#testimonials">Testimonials</a>
+            <a href="#contact">Contact Us</a>
+        </nav>
+    </header>
+
+    <section class="home" id="home">
+        <div class="content">
+            <div class="hero-text">
+                <h1>Welcome to Ayurdhara Ayurvedic Wellness & Panchkarma Centre</h1>
+                <p>Where Ancient Wisdom Meets Personalized Wellness... Experience the ancient wisdom of Ayurveda for modern wellness.
+			Rejuvenate Your Life with Timeless Ayurveda & Holistic Healing.
+			Discover natural, science-backed solutions to restore balance, detoxify your body, and revitalize your mind.</p>
+                <button style="margin-top: 20px;">Book Consultation</button>
+            </div>
+            
+            <div class="hero-slider">
+                <div class="slider-container">
+                    <div class="slide active" style="background-image: url('./img/1.jpg')"></div>
+                    <div class="slide" style="background-image: url('./img/2.jpg')"></div>
+                    <div class="slide" style="background-image: url('./img/3.jpg')"></div>
+                    <div class="slide" style="background-image: url('./img/4.avif')"></div>
+                    <div class="slide" style="background-image: url('./img/5.jpg')"></div>
+                </div>
+            </div>
+        </div>
+	
+</section>
+
+
+<section class="about" id="about">
+    <div class="about-container">
+        <!-- Image Column -->
+        <div class="image-column">
+            <div class="modern-frame">
+                <img src="./img/DrPhotoroom.jpg" 
+                     alt="Dr. Amruta Patil" 
+                     class="profile-image">
+                <div class="frame-overlay"></div>
+                <div class="experience-badge">
+                    8+ Years Healing Experience
+                </div>
+            </div>
+        </div>
+
+        <!-- Text Content Column -->
+        <div class="content-column">
+            <div class="content-wrapper">
+                <h2 class="section-pre-title">Authentic Ayurvedic Practice</h2>
+                <h1 class="section-main-title">Dr. Amruta Patil</h1>
+                <div class="title-underline"></div>
+
+                <div class="professional-summary">
+                    <p class="highlight-text">
+                        BAMS, MD (Ayurveda) | Certified Panchakarma Specialist | Nadi Parikshan Expert
+                    </p>
+                    
+                    <div class="about-content">
+                        <p class="main-description">
+                            With almost a decade of dedicated practice, Dr. Patil combines ancient Ayurvedic wisdom 
+                            with modern diagnostic techniques to provide personalized healthcare solutions. Our clinic 
+                            specializes in:
+                        </p>
+
+                        <ul class="specialization-list">
+                            <li>🌿 Customized herbal formulations using time-tested preparation methods</li>
+                            <li>🔥 Precision Agni Karma therapies for musculoskeletal disorders</li>
+                            <li>💆‍♀️ Complete Panchakarma detox programs tailored to individual Prakruti</li>
+                            <li>🩺 Pulse diagnosis (Nadi Parikshan) for accurate dosha analysis</li>
+                        </ul>
+
+                        <!--<div class="medicine-creation">
+                            <h3 class="process-title">Our Medicine Philosophy</h3>
+                            <p class="process-description">
+                                Every formulation in our pharmacy undergoes a rigorous 7-step preparation process:
+                            </p>
+                            <ol class="creation-steps">
+                                <li><strong>Vedic Scriptural Reference:</strong> Formulas rooted in classical texts like Charaka Samhita</li>
+                                <li><strong>Seasonal Harvesting:</strong> Herbs collected in optimal ritu (seasons) for peak potency</li>
+                                <li><strong>Traditional Preparation:</strong> Manual processing using granite grinders and copper vessels</li>
+                                <li><strong>Quality Verification:</strong> 3-stage purity testing including microscopy and HPLC analysis</li>
+                                <li><strong>Dosha Alignment:</strong> Customization based on individual constitution assessment</li>
+                                <li><strong>Clinical Validation:</strong> Patient trials with progress tracking</li>
+                                <li><strong>Sustainable Packaging:</strong> Eco-friendly materials preserving medicine efficacy</li>
+                            </ol>
+                        </div> -->
+
+                        <blockquote class="ayurveda-quote">
+                            "True healing comes from aligning with nature's rhythms - our medicines are simply nature's intelligence in tangible form"
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="services" id="services">
+    <div class="container">
+        <h2 class="section-title">Our Services</h2>
+
+        <div class="services-grid">
+            <!-- First Row -->
+            <div class="service-card">
+                <div class="card-icon">🩺</div>
+                <h3>Nadi Parikshan<br><span>Pulse Diagnosis</span></h3>
+                <p>Ancient pulse analysis for dosha assessment and health evaluation</p>
+            </div>
+
+            <div class="service-card">
+                <div class="card-icon">📍</div>
+                <h3>Viddhakarma<br><span>Acupuncture</span></h3>
+                <p>Strategic pressure point therapy for energy balancing</p>
+            </div>
+
+            <div class="service-card">
+                <div class="card-icon">🛁</div>
+                <h3>Panchakarma<br><span>Detox Program</span></h3>
+                <p>5-stage purification therapy for complete rejuvenation</p>
+            </div>
+
+            <div class="service-card">
+                <div class="card-icon">🥗</div>
+                <h3>Ahara Chikitsa<br><span>Diet Plan</span></h3>
+                <p>Personalized nutrition based on dosha constitution</p>
+            </div>
+
+            <!-- Second Row -->
+            <div class="service-card">
+                <div class="card-icon">🧘</div>
+                <h3>Yoga Therapy<br><span>Mind-Body Balance</span></h3>
+                <p>Customized yoga sequences for holistic wellness</p>
+            </div>
+
+            <div class="service-card">
+                <div class="card-icon">🔥</div>
+                <h3>Agnikarma<br><span>Heat Therapy</span></h3>
+                <p>Targeted thermal treatment for musculoskeletal issues</p>
+            </div>
+
+            <div class="service-card">
+                <div class="card-icon">💆</div>
+                <h3>Sattvavajaya<br><span>Mental Wellness</span></h3>
+                <p>Ayurvedic counseling for stress management</p>
+            </div>
+
+            <div class="service-card">
+                <div class="card-icon">🌐</div>
+                <h3>Online Consultation<br><span>Virtual Care</span></h3>
+                <p>Connect with our experts from anywhere in the world</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="gallery" id="gallery">
+    <div class="container">
+        <h2 class="section-title">Healing Through Ayurveda</h2>
+        
+        <div class="gallery-grid">
+            <!-- Gallery Items -->
+            <div class="gallery-item" style="grid-column: span 2; grid-row: span 2;">
+                <img src="./img/g1.jpeg" alt="Ayurvedic Herbs">
+                <div class="overlay">
+                    <h3>Natural Herb Collection</h3>
+                </div>
+            </div>
+            
+            <div class="gallery-item">
+                <img src="./img/g2.jpg" alt="Treatment">
+                <div class="overlay">
+                    <h3>Panchakarma Therapy</h3>
+                </div>
+            </div>
+            <div class="gallery-item" style="grid-column: span 2; grid-row: span 2;">
+                <img src="./img/g3.jpg" alt="Ayurvedic Herbs">
+                <div class="overlay">
+                    <h3>Natural Herb Collection</h3>
+                </div>
+            </div>
+            
+            <div class="gallery-item">
+                <img src="./img/g4.jpg" alt="Treatment">
+                <div class="overlay">
+                    <h3>Panchakarma Therapy</h3>
+                </div>
+            </div>
+            <div class="gallery-item" style="grid-column: span 2; grid-row: span 2;">
+                <img src="./img/g5.jpg" alt="Ayurvedic Herbs">
+                <div class="overlay">
+                    <h3>Natural Herb Collection</h3>
+                </div>
+            </div>
+            
+            <div class="gallery-item">
+                <img src="./img/g6.jpg" alt="Treatment">
+                <div class="overlay">
+                    <h3>Panchakarma Therapy</h3>
+                </div>
+            </div>
+            <div class="gallery-item" style="grid-column: span 2; grid-row: span 2;">
+                <img src="./img/g7.jpg" alt="Ayurvedic Herbs">
+                <div class="overlay">
+                    <h3>Natural Herb Collection</h3>
+                </div>
+            </div>
+            
+            <div class="gallery-item">
+                <img src="./img/g8.jpg" alt="Treatment">
+                <div class="overlay">
+                    <h3>Panchakarma Therapy</h3>
+                </div>
+            </div>
+            <div class="gallery-item" style="grid-column: span 2; grid-row: span 2;">
+                <img src="./img/g9.webp	" alt="Ayurvedic Herbs">
+                <div class="overlay">
+                    <h3>Natural Herb Collection</h3>
+                </div>
+            </div>
+            
+            <div class="gallery-item">
+                <img src="./img/g10.jpeg" alt="Treatment">
+                <div class="overlay">
+                    <h3>Panchakarma Therapy</h3>
+                </div>
+            </div>
+
+            <!-- Repeat similar structure for all 20 images -->
+            <!-- Add 18 more gallery items with different unsplash search terms -->
+            
+        </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox">
+        <span class="close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+        <a class="prev">&#10094;</a>
+        <a class="next">&#10095;</a>
+    </div>
+</section>
+
+<section class="testimonials" id="testimonials">
+    <div class="container">
+        <h2 class="section-title">What our Clients say about Us</h2>
+		<div class="section-grid">
+		  <div class="section-card">
+			<span><i class="ri-double-quotes-1"></i></span>
+			<h4>Love the simplicity</h4>
+			<p> They understood our brand and created a stunning website design.
+			Professional, responsive, and on-time delivery. Highly recommended! </p>
+			<img src="./img/boy.png" alt="user"/>
+			<h5>Allan Collins</h5>
+			<h6>Managing Director</h6>
+		  
+		  </div>
+		  <div class="section-card">
+			<span><i class="ri-double-quotes-1"></i></span>
+			<h4>Love the simplicity</h4>
+			<p> They understood our brand and created a stunning website design.
+			Professional, responsive, and on-time delivery. Highly recommended! </p>
+			<img src="./img/girl.png" alt="user"/>
+			<h5>Allan Collins</h5>
+			<h6>Managing Director</h6>
+		  
+		  </div>
+		  <div class="section-card">
+			<span><i class="ri-double-quotes-1"></i></span>
+			<h4>Love the simplicity</h4>
+			<p> They understood our brand and created a stunning website design.
+			Professional, responsive, and on-time delivery. Highly recommended! </p>
+			<img src="./img/boy1.png" alt="user"/>
+			<h5>Allan Collins</h5>
+			<h6>Managing Director</h6>
+		  
+		  </div>
+		  <div class="section-card">
+			<span><i class="ri-double-quotes-1"></i></span>
+			<h4>Love the simplicity</h4>
+			<p> They understood our brand and created a stunning website design.
+			Professional, responsive, and on-time delivery. Highly recommended! </p>
+			<img src="./img/girl1.png" alt="user"/>
+			<h5>Allan Collins</h5>
+			<h6>Managing Director</h6>
+		  
+		  </div>
+		  <div class="section-card">
+			<span><i class="ri-double-quotes-1"></i></span>
+			<h4>Love the simplicity</h4>
+			<p> They understood our brand and created a stunning website design.
+			Professional, responsive, and on-time delivery. Highly recommended! </p>
+			<img src="./img/boy.png" alt="user"/>
+			<h5>Allan Collins</h5>
+			<h6>Managing Director</h6>
+		  
+		  </div>
+		  <div class="section-card">
+			<span><i class="ri-double-quotes-1"></i></span>
+			<h4>Love the simplicity</h4>
+			<p> They understood our brand and created a stunning website design.
+			Professional, responsive, and on-time delivery. Highly recommended! </p>
+			<img src="./img/boy1.png" alt="user"/>
+			<h5>Allan Collins</h5>
+			<h6>Managing Director</h6>
+		  
+		  </div>
+
+
+		</div>
+    </div>
+</section>
+
+
+    <section class="contact" id="contact">
+	    <div class="container">
+        <h2 class="section-title">Contact Us</h2>
+		<!--<img src="./img/scanner.png" alt="scanner"/>-->
+        <div class="content">
+            <div class="contact-text">
+			
+			<h5><span><i class="ri-map-pin-user-fill"></i></span> Address:-</h5>
+			<p>001, 15 A Wing, Atlantic Apartments, 1st Cross Road,<br/>Swami Samarth Nagar, Lokhandwala Complex, Andheri West,<br/>Mumbai - 400053</p>
+			<br/>
+			<br/>
+
+			
+			<h5><span><i class="ri-mail-open-fill"></i></span> Email:-</h5>
+			<p>ayurdhara1994@gmail.com</p>
+			<br/>
+			<br/>
+
+			
+			<h5><span><i class="ri-phone-fill"></i></span> Contact No:-</h5>
+			<p>+91 9226924663</p>
+			<br/>
+			<br/>
+			
+			</div>
+			<div class="contact-form">
+			<h2 class="section-title">Write a message to us...</h2>
+			<form action="https://api.web3forms.com/submit" method="POST">
+				<input type="hidden" name="access_key" value="8c5a2fed-b22c-476e-beb5-bd745b23a74c">
+				<input placeholder="Enter your Name..." type="text" name="name" required>
+				<input placeholder="Enter your Emai ID..." type="email" name="email" required>
+				<!--<input type="tel" name="tel" pattern="[0-9]{10}" required />-->
+				<textarea placeholder="Write your message..." name="message" required></textarea>
+				<button type="submit">Submit Form</button>
+			</form>
+            </div>
+        </div>
+	<div>	
+    </section>
+	
+	
+	
+<!-- End Social Links -->
+
+    <script>
+	
+        // Add this slider script above existing smooth scroll script
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        function showSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (n + totalSlides) % totalSlides;
+            slides[currentSlide].classList.add('active');
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        // Auto-advance slides every 2 seconds
+        setInterval(nextSlide, 2000);
+
+        // Initialize first slide
+        showSlide(0);
+
+        // Previous smooth scroll script remains same
+    
+	
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+		
+		
+// 3D Parallax Effect
+document.addEventListener('mousemove', (e) => {
+    const card = document.getElementById('3d-card');
+    const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
+    const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+    
+    card.style.transform = `perspective(1000px) rotateX(${yAxis}deg) rotateY(${xAxis}deg)`;
+});
+
+
+// Lightbox functionality
+// Updated Lightbox Functionality
+const galleryItems = document.querySelectorAll('.gallery-item');
+const lightbox = document.querySelector('.lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const closeBtn = document.querySelector('.close');
+const prevBtn = document.querySelector('.prev');
+const nextBtn = document.querySelector('.next');
+let currentImageIndex = 0;
+const images = Array.from(galleryItems).map(item => item.querySelector('img').src);
+
+function openLightbox(index) {
+    currentImageIndex = index;
+    lightbox.style.display = 'block';
+    lightboxImg.src = images[currentImageIndex];
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+    lightbox.style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+galleryItems.forEach((item, index) => {
+    item.addEventListener('click', () => openLightbox(index));
+});
+
+closeBtn.addEventListener('click', closeLightbox);
+
+prevBtn.addEventListener('click', () => {
+    currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+    lightboxImg.src = images[currentImageIndex];
+});
+
+nextBtn.addEventListener('click', () => {
+    currentImageIndex = (currentImageIndex + 1) % images.length;
+    lightboxImg.src = images[currentImageIndex];
+});
+
+lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+        closeLightbox();
+    }
+});
+
+// Close with ESC key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeLightbox();
+    }
+});	
+
+
+    </script>
+</body>
+</html>
